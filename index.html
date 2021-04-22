@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <title>Vue.jsの練習</title>
+</head>
+<body>
+  <div id="app">
+  <p>
+    firstName: <input type="text" v-model:value="firstName">
+  </p>
+  <p>
+    lastName: <input type="text" v-model:value="lastName">
+  </p>
+  <p>
+    fullName {{ fullName }}
+  </p>
+  
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        firstName: '',
+        lastName: ''
+      },
+      computed: {
+        fullName: function() {
+          return this.firstName + ' ' + this.lastName
+        }
+      }
+    })
+
+  </script>
+</body>
+
+</html>
